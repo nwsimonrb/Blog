@@ -1,0 +1,72 @@
+# Site setings
+name: 'Simon Richebächer'
+description: 'Business Analyst and Software Engineer'
+meta_description: 'Interface work between software development, data analytics and business process management'
+logo:
+# Author image is used in site sidebar and greetings in the home page hero text
+author:
+  image: 'authorimage.jpg'
+  greetings: "Hello and welcome! I am Simon, an analyst by work and by heart. This blog aims to introduce you to new IT-developments in a practical way. 
+  In doing so, we consider their interactions with users and the environment."
+favicon: 'assets/images/favicon.ico'
+baseurl: 
+production_url: https://simon.richebaecher.org
+disqus: #'justgoodthemes'
+mailchimp_url: #'//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
+# Add your GA Tracking Id
+ga_analytics: 
+
+# Contact form setings
+email: simon@richebaecher.org
+contact_page_description: "Please contact me with any request you see fit."
+thankyou_page_description: "Your message has been successfully sent. I will contact you as soon as possible."
+
+# Social links
+twitter: #'justgoodthemes'
+facebook: #'username'
+github: #'justgoodthemes'
+codepen: #'username'
+dribbble: #'username'
+medium: #'@username'
+instagram: #'username'
+pinterest: #'username'
+linkedin: #'username'
+producthunt: #'@username'
+quora: #'username'
+
+# Navigation
+navigation:
+  - text: Home
+    url: /
+  - text: About
+    url: /about
+  - text: Style Guide
+    url: /style-guide
+  - text: Tutorial
+    url: /tutorial
+  - text: Contact Me
+    url: /contact
+  - text: Search
+    url: /search
+
+# Required Plugins
+plugins_dir:
+  - jekyll-paginate
+  - jekyll-tagsgenerator
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Permalinks
+permalink: /:title
+
+# Other
+markdown: kramdown
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
