@@ -42,8 +42,8 @@ navigation:
     url: /about
   - text: Style Guide
     url: /style-guide
-  - text: Tutorial
-    url: /tutorial
+  - text: tutorials
+    url: /tutorials
   - text: Contact Me
     url: /contact
   - text: Search
