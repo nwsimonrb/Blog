@@ -7,6 +7,7 @@ featured_image: assets/images/posts/2019/patterns.jpeg
 featured: true
 hidden: true
 ---
+- Abstract mit Link/Sprung zum Tutorial
 
 Up untill the late 2000s data storage was seen as a stationary and rather undynamic process. SQL databases were the prefered choice to store and manipulate data across various IT applications. Their tabular structure enable an intuitive understanding of data models and query formulation. For lower frequencies in data delivey they still are the go-to solution nowadays (*hint 1*). However, a new storage and processing technology tackling "slow paced" data pipelines has found widespread use since the 2010s. `Event streaming` supports the continous delivery of smaller, event-based data packages. From e-commerce recommendation to steering logistic operations, it can be found in the majority of near real-time processes of major companies worldwide. Household names are Apache Kafka<sup>1</sup>, Storm, Flink and Kinesis. Each one of them running under the opern source licence of the Apache foundation, with Kafka being the most widely used at the moment <sup>2</sup>.
 
