@@ -13,7 +13,7 @@ The following tutorial is intended to give you a lightweight and practical intro
 #### Our toolset
 My post [Event Streaming in Context](https://simon.richebaecher.org/event-streaming-context) looked at the pros and cons of choosing Apache Kafka for event streaming solution. By using Confluent in this tutorial we will have a beginner-friendly Kafka experience.<br /> 
 Choosing Microsoft Azure as the cloud provider where we host our confluent service has two advantages. First, we can use your existing Office365 account to easily create an azure account with free trial benefits. Second, no additional confluent account setup is required as Azure manages identity and payment details in the background. Of course, confluent also offers free trial bonuses. As does our dashboarding tool Power BI. More concretely we will use the cloud-native Power BI Service. This means that all you need is your browser and no software installation will be required.<br />
-All these tools are widely used in many industries and businesses. So there is a high chance that you will have an option to further work with them in the future. 
+If you already are working with other cloud providers like AWS or Google Cloud, you can still follow the tutorial from step 2) after setting up Confluent on your platform. Both Confluent and Power BI are widely used in many industries and businesses. So there is a high chance that you will have an option to further work with them in the future. 
 
 #### Part 1: Kafka Basics
 Our main goal with event streaming is to deliver messages from one side to the other at the exact moment events unfold. In between the producing side and the consuming side lies a delivery and storage system like Apache Kafka. Kafkas most relevant components can be seen in figure X. At the center, we see a **cluster** that houses other components as an infrastructure backbone. Basically, it is a compute and storage group that can be easily scaled to adapt Kafka to volatile throughput. From the inside out, we find the following within a cluster:<br />
@@ -31,11 +31,21 @@ Connected systems can be producers and consumers at the same time. Keep in mind 
 Before the practical part starts, I want to point you at some additional learning material. [Confluent](https://developer.confluent.io/learn-kafka/apache-kafka/events/) has an array of great videos that go from beginner-friendly to advanced content. They alternate between technical explanation and hands-on practice. I purposely presented you with the minimum Kafka vocabulary needed for Part 2. The high-quality courses by Confluent provide more than enough material to go more in-depth.  
 
 #### Part 2: Realtime Dashboard with Cloud Services
-In addition to the step-by-step instructions, you can also play the video I made to see certain tasks in detail. Follow [this link to YouTube](https://www.youtube.com/watch?v=qpa-7RvLqb8) or open the embedded version at the end of this section. 
+To envision our goal of building a real-time dashboard, let's follow the use-case scenario of the [previous post](https://simon.richebaecher.org/event-streaming-context). As owners of the online business, we continually get updates on product amounts and price changes from our warehousing and pricing teams. Besides updating our online shop with this data we want to give procurement a head start on purchasing items with low inventory or high turnover. For this purpose, our dashboard needs to show a list of product and price pairs that just changed in the last 20 minutes.<br /> 
+With the following step-by-step instructions you will build a small prototype. In addition to reading the task descriptions you can also play the video I made to show tasks 2), 4) and 5) visually. Follow [this link to YouTube](https://www.youtube.com/watch?v=qpa-7RvLqb8) or open the embedded version at the end of this section.
 
 ##### 1) Azure Account and Confluent Cloud setup
+We start by creating a free tier Microsoft Azure account in one of two ways:
+- **For Students**: If you have access to a university or school email start a plan without credit card details [here](https://azure.microsoft.com/en-us/free/students/). You will first need to log in with your (school/uni) Office365 credentials and then be required to identify with a valid phone number. The free credit is $100 and popular Azure services can be tested without credit usage.
+- **Everyone Else**: Follow the same process with regular credentials [here](https://azure.microsoft.com/en-us/free/), with the addition of providing your credit card details. The free credit is $200 (for 1 month) and popular Azure services can be tested without credit usage (for 12 months or more).
+
+After signing up we arrive at the Quickstart Center of the Azure portal. Navigate to the menu in the top left corner and choose 'Create a resource'. Now we can search the marketplace for **Apache Kafka® on Confluent Cloud™** and follow the setup guide [here](https://docs.confluent.io/cloud/current/billing/ccloud-azure-payg.html#get-started-with-ccloud-on-the-az-marketplace-with-pay-as-you-go). For the first trial month, $400 of credit is available for spending. This amount is more than sufficient for our upcoming scenario. Afterward, all 'pay-as-you-go' billings will be handled by your Azure account.
 
 ##### 2) Create Kafka infrastructure (Scenario)
+The setup guide should have already prompted us to enter Confluent Cloud via automated login. In the [tutorial video](https://www.youtube.com/watch?v=qpa-7RvLqb8) we start the following tasks from the Azure Platform to ensure repeatability:
+- Navigate to Confluent Cloud
+- Create an environment and subsequently a cluster on a basic plan.
+- Create a topic for the messages we want to handle. Our scenario is focused around product data so we name it ...  
 
 ##### 3) Power BI Service setup
 
@@ -44,7 +54,6 @@ In addition to the step-by-step instructions, you can also play the video I made
 ##### 5) Confluent to Power BI connection
  
 
-- Look into Confluent and create cluster, env., topic
 - Scenario of online shop: datagen prices and product
 - For now visualize all incoming changes in dashboard: Power BI, setup account
 - Power BI setup API and dashboard with tiles 
