@@ -43,20 +43,20 @@ After signing up we arrive at the Quickstart Center of the Azure portal. Navigat
 
 ##### 2) Create Kafka infrastructure (Scenario)
 The setup guide should have already prompted us to enter Confluent Cloud via automated login. In the [tutorial video](https://www.youtube.com/watch?v=qpa-7RvLqb8) we start the following tasks from the Azure Platform to ensure repeatability:
-- Navigate to Confluent Cloud
-- Create an environment and subsequently a cluster on a basic plan.
-- Create a topic for the messages we want to handle. Our scenario is focused around product data so we name it ...  
+- Navigate to Confluent Cloud.
+- Create an **environment** and subsequently a **cluster** on a basic plan.
+- Create a **topic** for the messages we want to handle. Our scenario is focused on product data so we name it "products". 
+- Go to the connector marketplace and select the **Datagen connector**. It will simulate incoming data from a producer. Choose the Product data template and schemaless JSON format so that we get suitable and simple messages delivered to our topic. Create the Datagen connector.  
+- Navigate back into our topic and select an offset like 0 to view incoming messages. You can click on a single message to view its contents. On the front page of the topic, we can see the current write and read throughput. For now, we see no read activity, let's change that.   
 
 ##### 3) Power BI Service setup
+Before we can set up an endpoint to receive data from Confluent Cloud - which is not a functionality of Power BI Desktop - we need to create a Power BI Service account. You find the free tier offering [here](https://powerbi.microsoft.com/en-us/getting-started-with-power-bi/). It lasts for 60 days and includes the basic features which are more than sufficient.<br />
+After selecting "try Power BI for free" we are prompted to enter an email address. If you have an existing student or workplace account for Microsoft/Office365 you can use it and that will usually require no additional setup. The other option is to sign up with a private email that is not linked to a standard provider like Outlook, Gmail, or iCloud. This way you can get past the barrier for personal addresses. Emails linked to private domains (ex. john@johnssurename.com) can be created for a monthly fee at providers like Google (Google Workspace-Domains [here](https://domains.google/get-started/email/)). 
 
 ##### 4) Power BI API and dashboard (Scenario) 
+- Power BI setup API and dashboard with tiles 
 
 ##### 5) Confluent to Power BI connection
- 
-
-- Scenario of online shop: datagen prices and product
-- For now visualize all incoming changes in dashboard: Power BI, setup account
-- Power BI setup API and dashboard with tiles 
 - Last: connection via http connector and look at final result
 
 Review:
