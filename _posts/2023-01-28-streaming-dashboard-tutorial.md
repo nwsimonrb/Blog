@@ -32,7 +32,7 @@ Before the practical part starts, I want to point you at some additional learnin
 
 #### Part 2: Realtime Dashboard with Cloud Services
 To envision our goal of building a real-time dashboard, let's follow the use-case scenario of the [previous post](https://simon.richebaecher.org/event-streaming-context). As owners of the online business, we continually get updates on product amounts and price changes from our warehousing and pricing teams. Besides updating our online shop with this data we want to give procurement a head start on purchasing items with low inventory or high turnover. For this purpose, our dashboard needs to show a list of product and price pairs that just changed in the last 20 minutes.<br /> 
-With the following step-by-step instructions you will build a small prototype. In addition to reading the task descriptions you can also play the video I made to show tasks 2), 4) and 5) visually. Follow [this link to YouTube](https://www.youtube.com/watch?v=qpa-7RvLqb8) or open the embedded version at the end of this section.
+With the following step-by-step instructions, you will build a small prototype. In addition to reading the task descriptions you can also play the video I made to show tasks 2), 4) and 5) visually. Follow [this link to YouTube](https://www.youtube.com/watch?v=qpa-7RvLqb8) or open the embedded version at the end of this section.
 
 ##### 1) Azure Account and Confluent Cloud setup
 We start by creating a free tier Microsoft Azure account in one of two ways:
@@ -54,7 +54,10 @@ Before we can set up an endpoint to receive data from Confluent Cloud - which is
 After selecting "try Power BI for free" we are prompted to enter an email address. If you have an existing student or workplace account for Microsoft/Office365 you can use it and that will usually require no additional setup. The other option is to sign up with a private email that is not linked to a standard provider like Outlook, Gmail, or iCloud. This way you can get past the barrier for personal addresses. Emails linked to private domains (ex. john@johnssurename.com) can be created for a monthly fee at providers like Google (Google Workspace-Domains [here](https://domains.google/get-started/email/)). 
 
 ##### 4) Power BI API and dashboard (Scenario) 
-- Power BI setup API and dashboard with tiles 
+We now prepare Power BI as the receiver before sending data from Confluent Cloud in step 5). Once you are within Power BI Service navigate to your workspace. It is found on the bottom of the left-side navigation bar or below the recommendations of the "Home" page. From within the workspace, do the following:
+- Create a new **Streaming dataset**. Select the basic API source and name your dataset (ex. "productUpdates"). The values from stream fields refer to the JSON keys we find in each message soon delivered by Kafka. Pay attention to correct spelling when entering, you can check the example JSON created in the window below. Also, edit the data type from Text to number for price and id. In the end, check the "Historic data analysis" slider as we want to keep data from at least the last 20min.
+- After creating the streaming dataset we see a **Push URL** which we copy and store securely for usage in step 5). The URL contains a token that should only be known to the sender (Confluent) and receiver (Power BI) - it is not for sharing. Although the connection will be securely encrypted through HTTPS, please keep in mind that data is sent over the public web and such entails residual risk (more information [here](https://medium.com/smallcase-engineering/web-security-access-token-in-url-79366a2bcb49)).       
+- Create a new **Dashboard** and add a tile with your custom streaming dataset. For starters choose a clustered bar chart as the visualization type. Enter product as the axis and price as values. Finish by choosing 20 minutes as the time window to display. You can optionally add additional visualizations as shown in the video.  
 
 ##### 5) Confluent to Power BI connection
 - Last: connection via http connector and look at final result
@@ -65,6 +68,8 @@ Overall simple convenient solution, keep in mind showcase, real life use case re
 More producers possible: connectors, just have to be careful: schema. And maybe aggregate/process data before in dashboard: ksql processing. Next posts. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qpa-7RvLqb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+secure api tokens: 
 
 
 **The quick brown [fox][1], jumped over the lazy [dog][2].**
