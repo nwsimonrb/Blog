@@ -43,11 +43,10 @@ After signing up we arrive at the Quickstart Center of the Azure portal. Navigat
 
 ##### 2) Create Kafka infrastructure (Scenario)
 The setup guide should have already prompted us to enter Confluent Cloud via automated login. In the [tutorial video](https://www.youtube.com/watch?v=qpa-7RvLqb8) we start the following tasks from the Azure Platform to ensure repeatability:
-- Navigate to Confluent Cloud.
-- Create an **environment** and subsequently a **cluster** on a basic plan.
-- Create a **topic** for the messages we want to handle. Our scenario is focused on product data so we name it "products". 
-- Go to the connector marketplace and select the **Datagen connector**. It will simulate incoming data from a producer. Choose the Product data template and schemaless JSON format so that we get suitable and simple messages delivered to our topic. Create the Datagen connector.  
-- Navigate back into our topic and select an offset like 0 to view incoming messages. You can click on a single message to view its contents. On the front page of the topic, we can see the current write and read throughput. For now, we see no read activity, let's change that.   
+- Navigate to Confluent Cloud. Create a **cluster** on a basic plan.
+- Create a **topic** for the messages we want to handle. Our scenario is focused on product data so you could name it "products". Skip the creation of a schema for now - I plan to include the Confluent schema registry in an upcoming post (see [here]). 
+- Go to the connector marketplace and select the **Datagen connector**. It will write dummy data into our "products" topic to simulate a producer. Generate a global access API key that will allow the connector to access your topic. Although we just do exemplary prototyping, it is always best to store a (downloaded) key securely. Choose the "Product" data template and JSON format so that we get suitable and simple messages delivered to our topic. Create the Datagen connector and wait a moment until it is provisioned.  
+- Navigate back into our topic and select an offset like 0 to view incoming messages. Note that we just receive unimaginative numbers as product names, prices, descriptions, etc. An upcoming post will introduce more diverse data sources (see [here]). In the overview tab, we can see the current write and read throughput. Our production rate has gone up as expected, while our small consumption rate can be explained by your short lookup in the messages tab.
 
 ##### 3) Power BI Service setup
 Before we can set up an endpoint to receive data from Confluent Cloud - which is not a functionality of Power BI Desktop - we need to create a Power BI Service account. You find the free tier offering [here](https://powerbi.microsoft.com/en-us/getting-started-with-power-bi/). It lasts for 60 days and includes the basic features which are more than sufficient.<br />
@@ -55,12 +54,16 @@ After selecting "try Power BI for free" we are prompted to enter an email addres
 
 ##### 4) Power BI API and dashboard (Scenario) 
 We now prepare Power BI as the receiver before sending data from Confluent Cloud in step 5). Once you are within Power BI Service navigate to your workspace. It is found on the bottom of the left-side navigation bar or below the recommendations of the "Home" page. From within the workspace, do the following:
-- Create a new **Streaming dataset**. Select the basic API source and name your dataset (ex. "productUpdates"). The values from stream fields refer to the JSON keys we find in each message soon delivered by Kafka. Pay attention to correct spelling when entering, you can check the example JSON created in the window below. Also, edit the data type from Text to number for price and id. In the end, check the "Historic data analysis" slider as we want to keep data from at least the last 20min.
+- Create a new **Streaming dataset**. Select the basic API source and name your dataset (ex. "productUpdates"). The values from stream fields refer to the JSON keys we find in each message soon delivered by Kafka. Pay attention to correct spelling when entering, you can check the example JSON created in the window below. Also, change the data type from text to number for "price" and "id". In the end, check the "Historic data analysis" slider as we want to keep data from at least the last 20min.
 - After creating the streaming dataset we see a **Push URL** which we copy and store securely for usage in step 5). The URL contains a token that should only be known to the sender (Confluent) and receiver (Power BI) - it is not for sharing. Although the connection will be securely encrypted through HTTPS, please keep in mind that data is sent over the public web and such entails residual risk (more information [here](https://medium.com/smallcase-engineering/web-security-access-token-in-url-79366a2bcb49)).       
-- Create a new **Dashboard** and add a tile with your custom streaming dataset. For starters choose a clustered bar chart as the visualization type. Enter product as the axis and price as values. Finish by choosing 20 minutes as the time window to display. You can optionally add additional visualizations as shown in the video.  
+- Create a new **Dashboard** and add a tile connected to your streaming dataset. For starters choose a clustered bar chart as the visualization type. Enter "name" as the axis and legend, "price" as values. Finish by choosing 20 minutes as the time window to display. You can optionally add additional visualizations as shown in the video.  
+
+pause and frequency
 
 ##### 5) Confluent to Power BI connection
-- Last: connection via http connector and look at final result
+Data is now produced to our topic in Confluent, but we are still missing a consumer who can pull that data and push it to the Power BI API. Confluent has a fully managed connector for such purposes. Follow these steps to set up the final connection:  
+- Navigate back to the connector marketplace and select the **HTTP Sink connector**. We follow the known procedure for the API key. Enter your URL from the Power BI, "TLSv1.2" as SSL Protocol (see why below*) and continue. Choose JSON as the record value format and open the advanced configurations. Here, select "json" as the request body format and "true" for the "Batch json as array" field. Create the Connector and wait for the provisioning.  
+- 
 
 Review:
 Overall simple convenient solution, keep in mind showcase, real life use case requires more thoughts on architecture aspects like secure networking. 
@@ -69,7 +72,13 @@ More producers possible: connectors, just have to be careful: schema. And maybe 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qpa-7RvLqb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-secure api tokens: 
+Email&Kontoname unkenttlich machen
+
+mehrere datagen testen und ggf. report
+
+limitations: 
+https://learn.microsoft.com/en-us/power-bi/developer/embedded/push-datasets-limitations
+429 too many : https://community.powerbi.com/t5/Service/API-Request-Blocked-by-Keyblocker/m-p/2888065
 
 
 **The quick brown [fox][1], jumped over the lazy [dog][2].**
