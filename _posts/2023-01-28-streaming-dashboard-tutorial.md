@@ -46,7 +46,7 @@ The setup guide should have already prompted us to enter Confluent Cloud via aut
 - Navigate to Confluent Cloud. Create a **cluster** on a basic plan.
 - Create a **topic** for the messages we want to handle. Our scenario is focused on product data so you could name it "products". Skip the creation of a schema for now - I plan to include the Confluent schema registry in an upcoming post (see [here]). 
 - Go to the connector marketplace and select the **Datagen connector**. It will write dummy data into our "products" topic to simulate a producer. Generate a global access API key that will allow the connector to access your topic. Although we just do exemplary prototyping, it is always best to store the (downloaded) key securely. Choose the "Product" data template and JSON format so that we get suitable and simple messages delivered to our topic. In the advanced options, increase the production interval to 10.000 ms to simulate an incoming event every 10 seconds. Create the Datagen connector and wait a moment until it is provisioned.  
-- Navigate back into our topic and view incoming messages in the respective tab. Note that we just receive increasing numbers as product names, prices, descriptions, etc. An upcoming post will introduce more diverse data sources (see [here]). In the overview tab, we can see the current write and read throughput. Our production rate has gone up as expected, while our small consumption rate can be explained by your short lookup in the messages tab. Now pause the connector until we reactivate it once the consumer side is ready. 
+- Navigate back into our topic and view incoming messages in the respective tab. Note that we just receive increasing numbers as product names, prices, descriptions, etc. An upcoming post will introduce more diverse data sources (see [here]).<!--  In the overview tab, we can see the current write and read throughput. Our production rate has gone up as expected, while our small consumption rate can be explained by your short lookup in the messages tab.--> Now pause the connector until we reactivate it once the consumer side is ready. 
 
 ##### 3) Power BI Service setup
 Before we can set up an endpoint to receive data from Confluent Cloud - which is not a functionality of Power BI Desktop - we need to create a Power BI Service account. You find the free tier offering [here](https://powerbi.microsoft.com/en-us/getting-started-with-power-bi/). It lasts for 60 days and includes the basic features which are more than sufficient.<br />
@@ -56,26 +56,25 @@ After selecting "try Power BI for free" we are prompted to enter an email addres
 We now prepare Power BI as the receiver before sending data from Confluent Cloud in step 5). Once you are within Power BI Service navigate to your workspace. It is found on the bottom of the left-side navigation bar or below the recommendations of the "Home" page. From within the workspace, do the following:
 - Create a new **Streaming dataset**. Select the basic API source and name your dataset (ex. "productUpdates"). The values from stream fields refer to the JSON keys we find in each message soon delivered by Kafka. Pay attention to correct spelling when entering, you can check the example JSON created in the window below. Also, change the data type from text to number for "price" and "id". In the end, check the "Historic data analysis" slider as we want to keep data from at least the last 20min.
 - After creating the streaming dataset we see a **Push URL** which we copy and store securely for usage in step 5). The URL contains a token that should only be known to the sender (Confluent) and receiver (Power BI) - it is not for sharing. Although the connection will be securely encrypted through HTTPS, please keep in mind that data is sent over the public web and such entails residual risk (more information [here](https://medium.com/smallcase-engineering/web-security-access-token-in-url-79366a2bcb49)).       
-- Create a new **Dashboard** and add a tile connected to your streaming dataset. For starters choose a clustered bar chart as the visualization type. Enter "name" as the axis and legend, "price" as values. Finish by choosing 20 minutes as the time window to display. You can optionally add additional visualizations as shown in the video.  
+- Create a new **Dashboard** and add a tile connected to your streaming dataset. For starters choose a clustered column chart as the visualization type. Enter "name" as the axis and "price" as values. Finish by choosing 20 minutes as the time window to display. You can optionally add additional visualizations as shown in the video.  
 
 ##### 5) Confluent to Power BI connection
 Data is now produced to our topic in Confluent, but we are still missing a consumer who can pull that data and push it to the Power BI API. Confluent has a fully managed connector for such purposes:  
-- Navigate back to the connector marketplace and select the **HTTP Sink connector**. We follow the known procedure for the API key. Enter your URL from the Power BI, "TLSv1.2" as SSL Protocol (see why issue 1 below ) and continue. Choose JSON as the record value format and open the advanced configurations. Here, select "json" as the request body format and "true" for the "Batch json as array" field. Create the Connector and wait for the provisioning.  
-- Take care of issue 2 below. 
+- Navigate back to the connector marketplace and select the **HTTP Sink connector**. We follow the known procedure for the API key. Enter your URL from the Power BI, "TLSv1.2" as SSL Protocol (see why issue 1 below ) and continue. Choose JSON as the record value format and open the advanced configurations. Here, select "json" as the request body format and "true" for the "Batch json as array" field. Create the Connector and wait for the provisioning.
+- Now you can reactivate the Datagen connector to produce new messages again. We had to pause it before, so that no large backlog of unconsumed messages was built up. The HTTP connector would otherwise try to catch up with an increased number of API requests and cross the limitations of the Power BI API (see [restrictions](https://learn.microsoft.com/en-us/power-bi/developer/embedded/push-datasets-limitations). Error codes like 429 (Too Many Requests) are found within the messages of an error-connector_name topic. Such topics are automatically created once sink connectors are created and can help help you troubleshoot.
+- Let's go to the Power BI dashboard and look at the dummy values coming in near real-time. Dashboards provide rapidly adapting visuals when using streaming data, but they miss the comprehensive list of features in classic Power BI reports. The video shows how the streaming dataset can also be used in a new report - with the drawback of manual refreshments.
 
-Review:
-Overall simple convenient solution, keep in mind showcase, real life use case requires more thoughts on architecture aspects like secure networking. 
+Congratulations to building your first real-time Dashboard in the Cloud. Our end result is a simple prototype with dummy data, but thanks to the Confluent/Kafka capabilities highly customizable and scalable. In the upcoming posts, we will build on this basis to explore more useful data integration and processing features. Stay tuned for updates with my [newsletter]() or over LinkedIn. 
 
-More producers possible: connectors, just have to be careful: schema. And maybe aggregate/process data before in dashboard: ksql processing. Next posts. 
+Newsletter?
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qpa-7RvLqb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Email&Kontoname unkenttlich machen
 
-mehrere datagen testen und ggf. report
-
 [1]: https://forum.confluent.io/t/confluent-http-sink-azure-event-hubs/2371 "explanation on TLS issue with this link"
-[2]: https://learn.microsoft.com/en-us/power-bi/developer/embedded/push-datasets-limitations "Cause for 429 error"
+[2]:  "Cause for 429 error"
 
 too many : https://community.powerbi.com/t5/Service/API-Request-Blocked-by-Keyblocker/m-p/2888065
 
