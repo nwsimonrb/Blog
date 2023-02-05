@@ -6,8 +6,7 @@ logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
   image: 'authorimage.jpg'
-  greetings: "Hello and welcome! I am Simon, an analyst by work and by heart. This blog aims to introduce you to new IT-developments in a practical way. 
-  In doing so, we consider their interactions with users and the environment."
+  greetings: "<u>Tech in Context</u> <br /> A blog examining both theory and practice in IT"
 favicon: 'assets/images/favicon.ico'
 baseurl: 
 production_url: https://simon.richebaecher.org
