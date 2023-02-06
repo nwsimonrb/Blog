@@ -1,18 +1,19 @@
 ---
 layout: post
 title: 'Event Streaming in Context'
-tags: [Event Streaming, Monitoring, Pratical Tips]
+tags: [Event Streaming, Monitoring, Practical Tips]
 featured_image_thumbnail:
-featured_image: assets/images/posts/2019/patterns.jpeg
+featured_image: assets/images/posts/Event_Streaming/time_critical_data.jpg
 featured: true
 hidden: true
 ---
-- Abstract mit Link/Sprung zum Tutorial
+Up until the late 2000s data storage was seen as a stationary and rather undynamic process. SQL databases were the preferred choice to store and manipulate data across various IT applications. Their tabular structure enable an intuitive understanding of data models and query formulation. For lower frequencies in data delivey they still are the go-to solution nowadays (*hint 1*). <br />
+However, a new storage and processing technology tackling "slow paced" data pipelines has found widespread use since the 2010s. `Event streaming` supports the continous delivery of smaller, event-based data packages. From e-commerce recommendation to steering logistic operations, it can be found in the majority of near real-time processes of major companies worldwide. Household names are Apache Kafka<sup>1</sup>, Storm, Flink and Kinesis. Each one of them running under the opern source licence of the Apache foundation, with Kafka being the most widely used at the moment <sup>2</sup>.
 
-Up until the late 2000s data storage was seen as a stationary and rather undynamic process. SQL databases were the preferred choice to store and manipulate data across various IT applications. Their tabular structure enable an intuitive understanding of data models and query formulation. For lower frequencies in data delivey they still are the go-to solution nowadays (*hint 1*). However, a new storage and processing technology tackling "slow paced" data pipelines has found widespread use since the 2010s. `Event streaming` supports the continous delivery of smaller, event-based data packages. From e-commerce recommendation to steering logistic operations, it can be found in the majority of near real-time processes of major companies worldwide. Household names are Apache Kafka<sup>1</sup>, Storm, Flink and Kinesis. Each one of them running under the opern source licence of the Apache foundation, with Kafka being the most widely used at the moment <sup>2</sup>.
+Abstract und Absprung?
 
 #### Why streaming?
-The main benefit of provisioning data almost instantly is the ability to be proactive and not just reactive once events unfold. Operational decisions - be it from an internal or customer side - are made in short time-windows that require the most up-to-date assesment of a context. Data arriving in low-frequent batches which cover longer timespans might still be usefull for tactical and strategic purposes, but loose their criticality fast (see figure X). Imagine a competitive market with a fast rotating product catalog. Many potential customers are lost to a company which uses low frequent batches to update products and prices on its online store, instead of updating each single product information the moment it changes.
+The main benefit of provisioning data almost instantly is the ability to be proactive and not just reactive once events unfold. Operational decisions - be it from an internal or customer side - are made in short time-windows that require the most up-to-date assesment of a context. Data arriving in low-frequent batches which cover longer timespans might still be usefull for tactical and strategic purposes, but loose their criticality fast (featured image above). Imagine a competitive market with a fast rotating product catalog. Many potential customers are lost to a company which uses low frequent batches to update products and prices on its online store, instead of updating each single product information the moment it changes.
 
 #### Does it pay for itself?
 Two drawbacks can be brought forewared against event-streaming. Lets look at the economically motivated first. Increased (data) throughput usually increases operating costs due to increased maintanance and energy consumption. This needs to be set against the value won by a higher degree of operational efficiency. 
