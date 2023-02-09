@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Style Guide
+title: Context
 featured_image: /assets/images/pages/style_guides.jpg
 ---
 
