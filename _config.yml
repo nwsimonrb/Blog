@@ -39,9 +39,9 @@ navigation:
     url: /
   - text: About
     url: /about
-  - text: Style Guide
-    url: /style-guide
-  - text: tutorials
+  - text: Context Posts
+    url: /context
+  - text: Tutorials
     url: /tutorials
   - text: Contact Me
     url: /contact

@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 'Event Streaming in Context'
-tags: [Event Streaming, Monitoring, Practical Tips]
+tags: [Context, Event Streaming, Kafka]
 featured_image_thumbnail:
 featured_image: assets/images/posts/Event_Streaming/time_critical_data.jpg
 featured: true
-hidden: true
+hidden: 
 ---
 Up until the late 2000s data storage was seen as a stationary and rather undynamic process. SQL databases were the preferred choice to store and manipulate data across various IT applications. Their tabular structure enable an intuitive understanding of data models and query formulation. For lower frequencies in data delivery they still are the go-to solution nowadays (*hint 1*). <br />
 However, a new storage and processing technology tackling slow-paced data pipelines has found widespread use since the 2010s. **Event streaming** supports the continuous delivery of smaller, event-based data packages. From e-commerce recommendations to steering logistic operations, it can be found in the majority of near real-time processes of major companies worldwide. Household names are Apache Kafka<sup>1</sup>, Storm, Flink and Kinesis. Each one of them runs under the open-source license of the Apache foundation, with Kafka being the most widely used at the moment <sup>2</sup>.

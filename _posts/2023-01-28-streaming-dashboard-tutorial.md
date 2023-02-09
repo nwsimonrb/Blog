@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "How to build your first event-streaming dashboard"
-tags: [ Tutorial ]
+tags: [Tutorial, Event Streaming, Dashboard, Confluent Cloud, Power BI]
 featured_image_thumbnail:
 featured_image: assets/images/posts/Event_Streaming/streaming_dash.png
 featured: true
-hidden: true
+hidden: 
 ---
 15min read, 30 min total
 

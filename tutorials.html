@@ -1,0 +1,14 @@
+---
+layout: default
+title: Tutorials
+---
+{% if page.url == "/tutorials" %}
+{% for post in site.posts %}
+{% if post.tags[0] == "Tutorial" %}
+{% include featuredbox_multi.html %}
+{% endif %}
+{% endfor %}
+
+{% endif%}
+
+

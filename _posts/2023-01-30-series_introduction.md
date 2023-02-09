@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Blog introduction and new series'
-tags: [Bigger Picture, Trends, Monitoring]
+tags: [Blog Update, Cloud Services]
 featured_image_thumbnail:  
 featured_image: assets/images/posts/Intro/intro_main1.jpeg
 featured: true

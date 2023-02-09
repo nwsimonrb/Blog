@@ -1,0 +1,14 @@
+---
+layout: default
+title: Context
+---
+{% if page.url == "/context" %}
+{% for post in site.posts %}
+{% if post.tags[0] == "Context" %}
+{% include featuredbox_multi.html %}
+{% endif %}
+{% endfor %}
+
+{% endif%}
+
+
