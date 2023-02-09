@@ -1,26 +1,22 @@
 ---
 layout: post
-title: 'Event Streaming in Context'
+title: 'Event streaming in context'
 tags: [Context, Event Streaming, Kafka]
 featured_image_thumbnail:
 featured_image: assets/images/posts/Event_Streaming/time_critical_data.jpg
 featured: true
 hidden: 
 ---
-Up until the late 2000s data storage was seen as a stationary and rather undynamic process. SQL databases were the preferred choice to store and manipulate data across various IT applications. Their tabular structure enable an intuitive understanding of data models and query formulation. For lower frequencies in data delivery they still are the go-to solution nowadays (*hint 1*). <br />
-However, a new storage and processing technology tackling slow-paced data pipelines has found widespread use since the 2010s. **Event streaming** supports the continuous delivery of smaller, event-based data packages. From e-commerce recommendations to steering logistic operations, it can be found in the majority of near real-time processes of major companies worldwide. Household names are Apache Kafka<sup>1</sup>, Storm, Flink and Kinesis. Each one of them runs under the open-source license of the Apache foundation, with Kafka being the most widely used at the moment <sup>2</sup>.
+Until the late 2000s, most data storage and delivery solutions followed a fairly standardized format. SQL databases were the preferred choice to store and manipulate data across various IT applications. Their tabular structure enables an intuitive understanding of data models and query formulation. For lower query frequencies and throughput requirements, they are still the go-to solution for data management today.<br />
+However, since the 2010s new storage and delivery technology has emerged to overcome slow data pipelines. **Event streaming**<sup>1</sup> supports continuous processing of smaller, event-based data packets. From e-commerce recommendations to controlling logistics operations, it can be found in the majority of near-real-time processes at large enterprises worldwide. Household names are Apache Kafka, Spark, Flink and Storm. Each of them runs under the Apache Foundation's open source license and has a unique capability spectrum for certain use cases. In addition to these frameworks, there are an even larger number of solutions from proprietary vendors. For now, we will focus on [Apache Kafka](https://kafka.apache.org), since it has a high profile and is widely used.  
 
-Other proprietary additions?
-Abstract und Absprung?
-
-#### Why streaming?
-The main benefit of provisioning data almost instantly is the ability to be proactive and not just reactive once events unfold. Operational decisions - be it from an internal or customer side - are made in short time-windows that require the most up-to-date assessment of a context. Data arriving in low-frequent batches which cover longer timespans might still be usefull for tactical and strategic purposes, but loose their criticality fast (featured image above). Imagine a competitive market with a fast moving product catalog. Many potential customers are lost to a company that updates advertisements in low-frequent batches at its online store, instead of displaying an update as soon as it becomes known.
+#### Why use event streaming?
+The main advantage of providing data almost instantly is the ability to act proactively, rather than just reactively, as events unfold. Operational decisions - whether on the internal or on the customer side - are made in short time windows that require an assessment of the context that is as up-to-date as possible. Data arriving in batches that cover long timespans might be useful for tactical and strategic purposes but lose their criticality fast (featured image above). Imagine a competitive market with a fast moving product catalog. Many potential customers are lost to a company that updates many ads in its online store at long intervals, instead of displaying an update as soon as it becomes known. This advantage of event streaming is often countered by two disadvantages. Let's look at the economically motivated first.
 
 #### Does it pay for itself? 
-Two drawbacks can be brought forward against event streaming. Let's look at the economically motivated first. Increased (data) throughput usually increases operating costs due to increased maintanance and energy consumption. This needs to be set against the value won by a higher degree of operational efficiency. 
-Depending on the use case, data processing and storage solutions vary widely in technological composition and scaling. It is therefore hard to find scientific publications on the economic comparison between batch and stream delivery without specifying the context. 
+Increased (data) throughput usually increases operating costs due to increased maintenance and energy consumption. This needs to be set against the value won by a higher degree of operational efficiency. Depending on the use case, data processing and storage solutions differ greatly in their technological composition and scaling. This makes it difficult to find scientific publications on the economic comparison between batch and stream delivery without specifying the context. 
 
-I therefore resort to an exemplary calculation of my own. Its purpose is to provide an approach on how to make estimates for an initial cost-benefit calculation regarding data delivery technologies. To avert the difficulty of looking into incomparable setup practices and product categories, technical specs focus on common infrastructure categories in the cloud. The major cloud providers have different specialties but compete in the same price range when it comes to basic compute and storage provisioning. For simplification, I presume that marketprices also encorporate infrastructure management and energy consumption. The source of upcoming numbers is the [pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/) from Microsoft Azure. Azure has been chosen as the exemplary cloud provider due to its suitability for the hands on tutorials of chapter X. 
+I therefore resort to an exemplary calculation of my own. It is intended to provide an approach for an initial cost-benefit calculation of data delivery technologies. To avoid the difficulty of dealing with non-comparable deployment practices and product categories, the technical specifications focus on common infrastructure categories in the cloud. The major cloud providers have different specializations, but compete in the same price range when it comes to basic compute and storage provisioning. For simplicity, I assume that market prices include infrastructure management and energy consumption. The source for the upcoming numbers is the [pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/) from Microsoft Azure. Azure is chosen as the exemplary cloud provider as it is suitable for practical exercises of the associated [tutorial](https://simon.richebaecher.org/streaming-dashboard-tutorial). 
 
 ##### 1) Calculating Scenarios: Batch vs. Stream Delivery
 Lets go back to the scenario of a company listing fast changing product portfolios with prices online. We first look into the technical assumptions and their current pricing (EU West):
@@ -81,6 +77,9 @@ If both platforms are so versatile and incorporate streaming technologies, why d
 These developments are crucial to the current architecural trend towards a highly networked "data mesh" approach. If such continues, future cloud applications will consist of a centralized delivery system and decentralized processing systems. Solutions like Apache Kafka will likely take the role of a "central nervous system" in this regard. I highly reccomend looking into the data mesh topic and will propably feature it in a future post (see announcement X). After this outlook, I hope you are motivated to learn the basics of event streaming in my [tutorial](https://simon.richebaecher.org/streaming-dashboard-tutorial). 
 -> next page
 
+
+
+<sup>1</sup> Also known as stream processing (see [Wikipedia](https://en.wikipedia.org/wiki/Stream_processing)) 
 
 <sup>1</sup>
 https://github.com/apache/kafka
