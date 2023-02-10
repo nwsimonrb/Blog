@@ -1,17 +1,18 @@
 # Site setings
 name: 'Simon Richebächer'
 description: 'Business Analyst and Software Engineer'
-meta_description: 'Interface work between software development, data analytics and business process management'
+meta_description: 'A blog that explores theory and practice in the IT field'
 logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
   image: 'authorimage.jpg'
-  greetings: "<u>Tech in Context</u> <br /> A blog examining both theory and practice in IT"
+  greetings: "<big>Tech in Context</big> <br />  <small>A blog that explores theory and practice in the IT field</small>"
 favicon: 'assets/images/favicon.ico'
 baseurl: 
 production_url: https://simon.richebaecher.org
 disqus: #'justgoodthemes'
-mailchimp_url: #'//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
+# mailchimp_url: 'https://richebaecher.us21.list-manage.com/subscribe/post?u=2eba95e41bce6b37115e5f9b4&amp;id=76c3434085&amp;f_id=0006f8e1f0'
+# mailchimp_url: #'//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
 # Add your GA Tracking Id
 ga_analytics: 
 
@@ -21,17 +22,17 @@ contact_page_description: "Please contact me with any request you see fit."
 thankyou_page_description: "Your message has been successfully sent. I will contact you as soon as possible."
 
 # Social links
-twitter: #'justgoodthemes'
-facebook: #'username'
-github: #'justgoodthemes'
-codepen: #'username'
-dribbble: #'username'
-medium: #'@username'
-instagram: #'username'
-pinterest: #'username'
-linkedin: #'username'
-producthunt: #'@username'
-quora: #'username'
+# twitter: #'justgoodthemes'
+# facebook: #'username'
+# github: #'justgoodthemes'
+# codepen: #'username'
+# dribbble: #'username'
+# medium: #'@username'
+# instagram: #'username'
+# pinterest: #'username'
+linkedin: 'simon-richebaecher'
+# producthunt: #'@username'
+# quora: #'username'
 
 # Navigation
 navigation:
