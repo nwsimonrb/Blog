@@ -75,6 +75,8 @@ Data is now produced to our topic in Confluent, but we are still missing a consu
 Congratulations on building your first real-time dashboard in the cloud. Our end result is a simple prototype with dummy data, but highly customizable and scalable thanks to the capabilities of Confluent/Kafka. In the next few posts, we will build on this and explore useful data integration and processing features. Stay tuned for updates over my LinkedIn profile or by bookmarking this website. 
 
 
+----------------------------------------------------------------------------------------------------------
+<br />
 <sup>1</sup> Amazon Web Service (AWS) <br />
 <sup>2</sup> JavaScript Object Notation (JSON) - data exchange format<br />
 <sup>3</sup> Uniform Resource Locator - address of resource in the web<br />
