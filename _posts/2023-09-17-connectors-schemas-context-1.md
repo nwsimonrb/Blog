@@ -3,7 +3,7 @@ layout: post
 title:  "The DNA of an adaptive IT strategy - a carbon accounting use case (1/2)"
 tags: [Context, Variety, Adaptive IT Strategy, Carbon Accounting, API, Connector, Schema Registry, Microservice]
 featured_image_thumbnail:
-featured_image: assets/images/posts/API_connectors/dna_it_strategy.jpg
+featured_image: assets/images/posts/API_Connectors/dna_it_strategy.jpg
 featured: true
 hidden: 
 ---
