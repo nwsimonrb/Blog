@@ -3,7 +3,7 @@ layout: post
 title:  "The DNA of an adaptive IT strategy - a carbon accounting use case (2/2)"
 tags: [Context, Variety, Adaptive IT Strategy, Carbon Accounting, API, Query Language, ANSI SQL, Schema]
 featured_image_thumbnail:
-featured_image: assets/images/posts/API_connectors/ca_rental_usecase.jpg
+featured_image: assets/images/posts/API_connectors/ca_rental_use_case.jpg
 featured: false
 hidden: true 
 ---
@@ -108,7 +108,7 @@ A company engages in servitization when it no longer just sells products but bun
 
 The business model requires real-time tracking of e-bikes, so that customers can find their vehicle at any time and are charged according to the distance traveled. An event-driven architecture with a streaming service at its core enables this. Since electricity consumption for each trip is linked to the company's [Scope 2 emissions](https://ghgprotocol.org/scope-2-guidance), parts of the carbon accounting can now be calculated in real-time. Relevant metadata such as Scope 3 emissions from upstream supply chain activities can also be integrated via direct API communication. Coupling and decoupling from external services is greatly simplified through plug-and-play API connectors. In addition, a schema registry helps with schema management and validation to protect data integrity and quickly adapt the internal message model to new requirements. 
 
-{% include image-caption.html imageurl="/assets/images/posts/API_Connectors/ca_rental_usecase.jpg" title="ca_rental_usecase" caption="Adaptive IT-strategy applied to real-time carbon accounting for an e-bike rental service" %}
+{% include image-caption.html imageurl="/assets/images/posts/API_Connectors/ca_rental_use_case.jpg" title="ca_rental_usecase" caption="Adaptive IT-strategy applied to real-time carbon accounting for an e-bike rental service" %}
 
 Fundamental data processing that generates source data for the existing carbon accounting software was previously performed in an SQL database. Now, CA calculations can be performed with real-time data in the event streamer, which supports an SQL-like dialect. This facilitates the migration of existing processing logic and makes it adaptable for future transitions. Since Scope 1 and 2 data come from the existing CA solution, Scope 2 deviations are tracked in real-time, and Scope 3 data can be easily obtained from external services, new opportunities arise. The positive contribution of the new rental service to the company's emissions impact can be broken down for each use of the service. If the customer chooses a renewably charged e-bike instead of a conventionally charged one, the reduction in Scope 2 emissions can be calculated for each ride. This reduction could be achieved through the purchase of renewable energy credits (REC) or on-site renewable energy generation.
 
