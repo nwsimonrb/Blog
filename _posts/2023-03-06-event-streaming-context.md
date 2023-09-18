@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 'Event streaming advances operational efficiency and fuels cloud competition'
-tags: [Context, Event Streaming, Kafka]
+tags: [Context, Velocity, Event Streaming, Apache Kafka, Data Platform]
 featured_image_thumbnail:
 featured_image: assets/images/posts/Event_Streaming/time_critical_data.jpg
-featured: true
+featured: false 
 hidden: 
 ---
 

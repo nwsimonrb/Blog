@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "How to build your first event streaming dashboard"
-tags: [Tutorial, Event Streaming, Dashboard, Confluent Cloud, Power BI]
+tags: [Tutorial, Velocity, Event Streaming, Apache Kafka, Confluent Cloud, Power BI Service, Dashboard]
 featured_image_thumbnail:
 featured_image: assets/images/posts/Event_Streaming/streaming_dash.png
-featured: true
+featured: false
 hidden: 
 ---
 The following tutorial is intended to give you a lightweight and practical introduction to event streaming. Look forward to quick visual results when building a dashboard with real-time data. If you don't need the short explanation of Apache Kafka's components in Part 1, you can jump straight into the step-by-step guide of Part 2.  
