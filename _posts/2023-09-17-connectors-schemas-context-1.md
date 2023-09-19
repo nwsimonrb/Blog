@@ -11,7 +11,7 @@ hidden:
 #### Summary part 1:
 - The increase in environmental reporting under constantly changing conditions requires adaptable IT systems.
 - System interfaces that are subject to external changes can benefit from plug-and-play "API connectors" that follow a strategy of reusability.
-- Consistency and validation of data exchange is supported by centralized "schema registries" that follow a strategy of standardization and collaboration.
+- Consistency and validation of data exchange is supported by centralized "schema registers" that follow a strategy of standardization and collaboration.
 <br>
 
 #### Adaptation of IT systems to change
@@ -121,13 +121,13 @@ They are typically provided as an additional service by platform providers. Popu
 #### How can I adapt APIs to changing message content? 
 The second dimension to consider in API adaptability concerns the structure and elements of message content. Like a cell membrane that becomes selectively permeable when a receptor is activated, only certain types of content should be allowed through. The previous section introduced data formats and their use to represent a data model in a message. So the obvious idea is to restrict the message content by specifying how the data should be represented in a format like JSON or XML. This task is performed by schemas. **Schemas** generally define a blueprint for data (models) by specifying rules for structure, names, data types, and more. Thus, for data formats such as JSON and XML, we use `JSON Schema` and `XML Schema Definition (XSD)` for this purpose. The instructions are written in JSON or XML itself, which makes the process more user-friendly.
 
-Schemas are great for providing data blueprints, but how do you manage a whole collection of schemas for different communication partners? And how do you deal with change requests from one partner while others still want to use the old schema? For these questions, there are schema management solutions called **schema registries**. Like repositories, they help you collaborate with others on versions of your shared content (in this case, schemas). They ensure that only authorized changes are made and that backward compatibility is maintained with each new version. 
+Schemas are great for providing data blueprints, but how do you manage a whole collection of schemas for different communication partners? And how do you deal with change requests from one partner while others still want to use the old schema? For these questions, there are schema management solutions called **schema registers**. Like repositories, they help you collaborate with others on versions of your shared content (in this case, schemas). They ensure that only authorized changes are made and that backward compatibility is maintained with each new version. 
 
 {% include image-caption.html imageurl="/assets/images/posts/API_Connectors/sch_reg_simple.jpg" title="schema_registry_simple" caption="A schema registry as an intermediary contract provider" %}
 
 Systems that have many API connections and share event-driven data are prime candidates for using schema registers. As a result, the providers of readily available cloud implementations come from these use cases. Well-known schema registry services include the Confluent Schema Registry for Apache Kafka and the AWS Schema Registry for Amazon EventBridge.
 
-With the above components, the adaptability of APIs becomes easier to handle. Standards and connectors help in onboarding new communication partners. Both communication sides can agree on message content using a schema registry, and the required schema versions are used by APIs to validate incoming and outgoing data. If you would like to see what such a setup might look like in the practical context of carbon accounting, have a look at the [corresponding Tutorial](http://simon.richebaecher.org/integration-processing-tutorial). There you will also find some more detailed information on schema registries. 
+With the above components, the adaptability of APIs becomes easier to handle. Standards and connectors help in onboarding new communication partners. Both communication sides can agree on message content using a schema registry, and the required schema versions are used by APIs to validate incoming and outgoing data. If you would like to see what such a setup might look like in the practical context of carbon accounting, have a look at the [corresponding Tutorial](http://simon.richebaecher.org/integration-processing-tutorial). There you will also find some more detailed information on schema registers. 
 
 #### API adaptability in practice
 A current trend in software architecture is the use of a microservice pattern. This means that smaller services are developed or acquired separately in order to combine them into one large application. Consequently, this distributed approach requires a lot of interactions between components via APIs. Two pros and cons of a microservice strategy are particularly instructive when it comes to potential API customization pitfalls. Let's look at how we can mitigate them with the tools I've presented and summarize the findings from part 1.
@@ -140,7 +140,7 @@ A current trend in software architecture is the use of a microservice pattern. T
 **2) Faster Development vs. Data Consistency**
 - Pro: Small development teams can work in a more focused manner and in shorter release cycles. 
 - Cons: Things break quickly when data is inconsistent because independent teams have difficulty coordinating. 
-- Solution: **Collaboration and standardization** are key. Regular synchronization, agreements on changes, and enforcement of standards prevent inconsistencies - think schema registries.  
+- Solution: **Collaboration and standardization** are key. Regular synchronization, agreements on changes, and enforcement of standards prevent inconsistencies - think schema registers.  
 <br/>
 
 **Follow up with part 2: [Internal processing logic - Query languages](http://simon.richebaecher.org/connectors-schemas-context-2)**
