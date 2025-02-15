@@ -5,7 +5,7 @@ featured_image: /assets/images/pages/about.jpg
 ---
 
 
-Hello there, I am Simon, an industrial engineer who loves to enable technical development by bringing together different areas of expertise. My work mostly takes place at the intersection of software development, data analysis and business process management. So anything that falls into the realm of **business analysis** and **software engineering** is right up my alley. 
+Hello there, I am Simon, an industrial engineer who loves to enable technical development by bringing together different areas of expertise. My work mostly takes place at the intersection of software development, data analysis and business process management. So anything that falls into the realm of **software architecture** and **business analysis** is right up my alley. 
 
 In my current profession as an IT quality manager, I specialize in software architecture and data modeling to support the development of flexible and durable monitoring solutions. Before that, I did my Master's degree at the Karlsruhe Institute of Technology (KIT). Besides my studies I worked in IT for smaller and larger companies, doing projects in the areas of web development and data science.  
 

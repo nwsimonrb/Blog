@@ -4,7 +4,7 @@ title:  "The DNA of an adaptive IT strategy - a carbon accounting use case (1/2)
 tags: [Context, Variety, Adaptive IT Strategy, Carbon Accounting, API, Connector, Schema Registry, Microservice]
 featured_image_thumbnail:
 featured_image: assets/images/posts/API_Connectors/dna_it_strategy.jpg
-featured: true
+featured: false
 hidden: 
 ---
 
@@ -17,7 +17,7 @@ hidden:
 #### Adaptation of IT systems to change
 We are currently experiencing a time when many different and rapid changes are affecting our daily lives. As digital interaction has become an integral part of our lives, it must also adapt to these changes. In the previous context post, we learned how IT systems can use event streaming to improve the way they handle fast-moving data, i.e., increase velocity. In this post, we look at how systems can handle a large number of changes in data requirements, i.e., how they deal with variety. 
 
-If we consider an IT system as a closed system with environmental influences, there are two aspects that require adaptation. External changes mean that the system must adapt its interfaces to receive correct inputs and deliver correct outputs. Internal changes mean that processing capabilities must be adjusted while the main logic remains consistent. Since I see parallels to cellular activities in the field of biology, I will use these analogies to provide a more tangible introduction to the IT problems at hand. Based on this, I have summarized the methods and technologies that guide adaptations to internal/external changes as the "DNA of an adaptive IT strategy." The cover image schematically represents the key concepts we will explore in the following sections.
+If we consider an IT system as a closed system with environmental influences, there are two aspects that require adaptation. External changes mean that the system must adapt its interfaces to receive correct inputs and deliver correct outputs. Internal changes mean that processing capabilities must be adjusted while the main logic remains consistent. Since I see parallels to cellular activities in the field of biology, I will use these analogies to provide a more tangible introduction to the IT problems at hand. Based on this, I have summarized the methods and technologies that guide adaptations to internal/external changes as the "DNA of an adaptive IT strategy". The cover image schematically represents the key concepts we will explore in the following sections.
 
 #### Transfer IT adaptability to carbon accounting
 A major external change facing our society and businesses is climate change. Through legislation set by policymakers and self-imposed standards, we are adapting our processes and technologies to reduce the extent of its harmful effects. You may have heard that environmental, social and governance (ESG) frameworks are becoming increasingly important across all industries. An important component of environmental impact reporting is **carbon accounting (CA)**. This involves techniques for measuring, calculating and reporting greenhouse gas (GHG) emissions. 

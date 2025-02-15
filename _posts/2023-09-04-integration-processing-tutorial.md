@@ -4,7 +4,7 @@ title:  "How to process diverse data for real-time carbon accounting"
 tags: [Tutorial, Variety, Event Streaming, Carbon Accounting, API, Connector, Confluent Cloud, Azure SQL Database, Jupyter Notebook, Climatiq, Power BI Service, Dashboard]
 featured_image_thumbnail:
 featured_image: assets/images/posts/API_Connectors/emissions_dashboard_title.jpg
-featured: true
+featured: false
 hidden: 
 ---
 Carbon accounting methods require the management of different data sources and their combination into aggregated data. Doing so in real-time is another challenge in itself. In this tutorial, we learn how to use plug-and-play solutions by Confluent Cloud to perform these tasks more easily. You will set up and integrate data from a SQL<sup>1</sup> database, an event producer and an API<sup>2</sup> for carbon footprint calculation. Afterward, you will merge this data to calculate emission metrics, that you can display in a Power BI dashboard.
