@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A new approach to task automation: LLM multi-agent systems"
-tags: [Context, Volume, Task Automation, Cheap GenAI, ]
+tags: [Context, Volume, Task Automation, GenAI, LLM, Multi-Agent Systems, Serverless Computing]
 featured_image_thumbnail:
 featured_image: assets/images/posts/Multi_Agent_Serverless/mas_title.jpg
 featured: true

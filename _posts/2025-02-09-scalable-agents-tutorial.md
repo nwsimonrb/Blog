@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to build a custom GenAI research and prognosis engine"
-tags: [Tutorial, Volume, Serverless, Azure Functions, GenAI, Multi-Agent, Research Engine]
+tags: [Tutorial, Volume, Serverless, Azure Functions, Multi-Agent Systems, Research Engine, CrewAI]
 featured_image_thumbnail:
 featured_image: assets/images/posts/Multi_Agent_Serverless/roi_report.png
 featured: true
