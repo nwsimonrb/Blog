@@ -9,8 +9,8 @@ hidden: false
 ---
 
 #### Summary 
-- While the hype surrounding GenAI continues, it is also driving automation forward. Multi-agent systems (MAS) combine large language models into an entire network of collaborating agents. 
-- Open source frameworks such as Crewai make setting up MAS and connecting to APIs more user-friendly. However, key challenges such as stable performance and computational efficiency remain.  
+- While the hype surrounding Generative AI continues, it is also driving automation forward. Multi-agent systems (MAS) combine large language models into an entire network of collaborating agents to enable task automation. 
+- Open source frameworks such as Crewai make setting up MAS and connecting them to APIs more user-friendly. However, key challenges such as stable performance and computational efficiency remain.  
 - To mitigate the impact of these problems, two solutions are proposed. One is methodological and recommends the increased use of well-defined tools and guardrails for agents. The second is of a technical nature and emphasizes the advantages of serverless cloud computing.  
 - The progressive networking of systems creates immense automation potential with MAS. But it also harbors risks such as increased resource consumption and non-transparent use of AI. Targeted use and controlled environments are therefore essential.
 
@@ -25,7 +25,7 @@ Looking at the dynamics of the (Gen)AI market, it is still in its early stages a
 Intelligence benefits from being networked. A next logical step to improve GenAI is therefore to build networks of collaborative agents instead of isolated models. Multi-agent systems (MAS), inspired by human collaboration, enable machines to share information, adapt and work together to solve complex, interconnected problems. These systems can redefine workflows and transform entire areas such as customer service, financial accounting and business intelligence.
 While this technology offers immense potential, thoughtful design, customization and innovation in multi-agent systems are key to unlocking their full value. The future is not just about smarter machines, but about intelligent collaboration between people, machines and entire networks.
 
-
+<br>
 ### Divide and conquer - automation with algorithms, robots and LLM multi-agents 
 The automation of manual tasks is one of the most important drivers of digitalization. Traditionally, it is based on fixed algorithmic programming. Computer-controlled processing instructions with strict patterns work well in stable environments, but have difficulties with variability or dynamic tasks. Robotic process automation (RPA) has been introduced to increase flexibility by mimicking human input and navigation. But again, this depends on rigorous implementation, stability and/or regular maintenance. 
 
@@ -33,13 +33,13 @@ With the advent of machine learning (ML), automation became more adaptive as sys
 
 Given these limitations, it makes sense to focus on areas where ML-based automation already works well. Language-based and programmatic workflows are ideal for the use of specialized LLMs as workers designed for specific tasks. We will therefore focus on LLM-based multi-agent systems that are already in widespread use. These types of agents can communicate and collaborate with each other to manage more complex workflows. Broadly speaking, we divide workflows into specialties and pass them on to customized agents to make them work reliably. By enabling agents to communicate with each other to pass on data and tasks, we achieve mastery of complex processes in their entirety. Hence the title of this section: “Divide and conquer”. 
 
-{% include image-caption.html imageurl="/assets/images/posts/Multi_Agent_Serverless/mas_workflow.jpg" title="mas_workflow" caption="Multi-Agent System (MAS) coordination structures" %}
+{% include image-caption.html imageurl="/assets/images/posts/Multi_Agent_Serverless/mas_workflow.jpg" title="mas_workflow" caption="Multi-agent system coordination structures" %}
 
 Coordination and communication within a multi-agent system is usually organized in two ways. Sequentially, i.e. tasks are completed step by step and the agents carry out the handover linearly. Or hierarchically, where manager agents at a higher level monitor and control the handover between smaller, specialized units. The more structure or roles we introduce into agent coordination, the more potential for scalability and adaptability is introduced. This in turn introduces new challenges, such as balancing the share of conversation, avoiding redundant or conflicting actions and maintaining overall system stability under unpredictable conditions. Sounds pretty human, doesn't it?
 
 After this introduction to multi-agent systems, it is time to take a look at the current possibilities for implementation. Industries that are already using this technology give us an insight into the areas in which this form of automation is already being used successfully.       
 
-
+<br>
 ### Widely used solutions and their focus (groups)
 Open source or proprietary LLMs are the essential building block of LLM multi-agent systems. These models can only work in the collaborative structures mentioned above if they are programmed with some orchestration capabilities surrounding them. With open-source LLM frameworks such as LangChain, it is possible to program customized solutions. In contrast, specialized MAS frameworks and platforms offer pre-built solutions and are becoming increasingly popular due to their ease of use. Many platforms have the same characteristics as Python-based open source code with a community-oriented approach. However, they differ in certain key aspects, which I will briefly highlight in the table below.
 
@@ -57,6 +57,7 @@ A key function of these platforms is to provide agents with access to a variety 
 Adaptability and interconnectivity are great, but also lead to trade-offs. The MAS of the above frameworks often rely heavily on robust model providers, reliable data sources and consistent libraries. This dependency makes them somewhat vulnerable, as disruptions to any of these components can impact functionality. While ensuring the stability of the infrastructure is critical, another layer of complexity arises from managing the behavior of the agents themselves. Intelligent agents, especially in dynamic environments, can exhibit unexpected or suboptimal behavior if they are not properly guided or controlled. This highlights the importance of robust mechanisms to control and monitor agent activity to maintain the integrity of the workflow and ensure consistent outcomes. As these platforms continue to evolve, it will be important to strike a balance between customization, stability and control to realize the full potential of agent-based automation. Let's take a look at some of the methods we can use today to achieve this goal. 
 
 
+<br>
 ### From sledgehammers to nutcrackers: give your agents the right tools!  
 When working with multi-agent systems, a common mistake is to give agents vague instructions to solve problems on their own. As powerful and adaptable as they may be at processing information, this can lead to undesirable results and wasteful self-correcting loops, if not deadlocks. A great metaphor is using a sledgehammer to crack a nut - an overpowering, inefficient approach to a specific problem that can also go badly wrong. Instead, it's best to equip agents with concrete instructions and processing capabilities to balance their dynamic nature with simplicity and functionality.
 
@@ -75,7 +76,9 @@ And finally, remember that it's not the tool that matters, but how you use it. A
 
 For those who want to take a more technical look at things, I've created a handy [tutorial](http://simon.richebaecher.org/scalable-agents-tutorial). There you will also find tips on how to introduce guardrails to create a good balance between agent creativity and control of results. 
 
-### How do I set up a MAS labor- and cost-efficiently?  
+
+<br>
+### How can I set up a MAS in a labor- and cost-efficient way?
 One advantage of LLM agents is that they can be technically equipped to interact directly with other IT systems. Many modern processes rely on applications that require the use of graphical user interfaces (GUIs) to access human input and generate output. With full automation, we can now bypass these requirements and their complex environments by having agents work at the technical API or command level. This not only speeds up the development process, but also simplifies integration into existing systems.
 
 This can also pave the way for an API-first strategy (more in [this context post](http://simon.richebaecher.org/connectors-schemas-context-1)). For example, agents can act as intermediaries that parse changing system inputs to meet formatting requirements. Agents that act as buffers in this way allow for more flexible communication between components. They can also interpret, map and transform inputs and outputs to ensure seamless interaction and minimize the need for costly and labor-intensive manual adjustments.
@@ -83,6 +86,8 @@ This can also pave the way for an API-first strategy (more in [this context post
 Long-term efficiency depends on reusability and reduced complexity. An important strategy is to design agents and tools as modular, shareable components. By encouraging developers to share reusable code and frameworks instead of developing a separate agent or tool for each problem, redundancies and the associated costs can be reduced. Minimizing communication between agents is another important practice. Excessive back and forth between agents can increase computational overhead and the potential for errors. When each component is optimized to do its job with minimal dependency on the others, the system becomes more efficient and scalable.
 
 The scalability of multi-agent systems can be improved by using serverless computing power in the cloud. Serverless architecture eliminates the need to maintain a dedicated server infrastructure. It allows programs to run on demand without the overhead of provisioning, managing or scaling physical or virtual servers. Instead, computing resources are dynamically allocated by the cloud provider as soon as a user-defined trigger requires it.
+
+<br>
 
 {% include image-caption.html imageurl="/assets/images/posts/Multi_Agent_Serverless/serverless_agents.jpg" title="serverless_agents" caption="Scalability of serverless computing and efficiency of MAS application" %}
 
@@ -92,17 +97,21 @@ Regardless of whether a system needs to handle a few isolated tasks or thousands
 
 By focusing on API accessibility, reusability and scalable cloud computing, one can build MAS that balance immediate efficiency gains with sustainable, long-term growth. These strategies reduces labor-intensive processes, minimize costs and ensures that systems can be adapted to evolving technologies and requirements.
 
+
+<br>
 ### Looking ahead: The potential and challenges of multi-agent systems
 The current state of MAS adoption shows a growing usage but also significant challenges. A recent survey by Guo et al. (2024)<sup>2</sup> emphasizes the increasing integration of LLMs, which has enabled substantial progress in areas like collaboration, decision-making, and task execution. 
 These advances have made MAS particularly valuable in areas that require adaptability, such as customer service, content creation and dynamic task management. 
 
-The survey identifies key challenges in the adoption of LLM-driven Multi-Agent Systems. Those include unpredictability in high-stakes tasks, computational inefficiencies, and latency issues, particularly when scaling across interconnected environments. To mitigate these obstacles, advancements such as self-reflective capabilities in LLMs are being introduced to enhance reliability and minimize errors. Leading model providers, such as OpenAI, have already implemented these reasoning techniques to improve response quality. This helps to reduce the need for extensive input and output validation mechanisms. Despite these advancements, clear task definitions, robust tool integration, and domain-specific customization remain critical for effective deployment. While the adoption of MAS continues to expand, achieving widespread industry integration will require ongoing architectural refinement. 
+The survey identifies key challenges in the adoption of LLM-driven multi-agent systems. Those include unpredictability in high-stakes tasks, computational inefficiencies, and latency issues, particularly when scaling across interconnected environments. To mitigate these obstacles, advancements such as self-reflective capabilities in LLMs are being introduced to enhance reliability and minimize errors. Leading model providers, such as OpenAI, have already implemented these reasoning techniques to improve response quality. This helps to reduce the need for extensive input and output validation mechanisms. Despite these advancements, clear task definitions, robust tool integration, and domain-specific customization remain critical for effective deployment. While the adoption of MAS continues to expand, achieving widespread industry integration will require ongoing architectural refinement. 
 
 The increasing networking of systems through APIs and the potential for communication between multiple MAS platforms offers immense opportunities. Connected agents could share tasks and resources more dynamically, enabling systems to tackle increasingly complex problems. However, this networking also brings challenges. The back and forth communication between agents can lead to significant time delays and increased consumption of computing resources. Compared to lean, algorithmic processing or clearly defined API operations, such constant communication is far less efficient and environmentally friendly. The potential impact on the environment highlights the need to think carefully about how MAS are deployed to balance their performance with the pursuit of efficiency. 
 
 A further complexity arising from this interconnectedness is the increasing difficulty in identifying where and how AI is being used. For example, when MAS components in neighboring systems provide or consume data, the use of AI can be obscured, making transparency efforts more difficult. This is particularly relevant in light of regulations such as the EU AI Act, which requires companies to clearly disclose their AI usage. The increasing interconnectedness of systems makes compliance more difficult, but also serves as a reminder of the importance of developing systems that are not only functional, but also transparent and accountable.
 
 Despite these challenges, the evolution of MAS adoption is promising, provided we continue to focus on solving the right problems and maintaining flexibility in controlled environments. As the technology evolves, it will become increasingly important to align the application of MAS with clear goals and sustainable practices. If you want to explore the possibilities of multi-agent systems, you should start with controlled, practical applications. For starters, you can experiment with [this guide](http://simon.richebaecher.org/scalable-agents-tutorial) to understand and implement your own MAS system.
+
+<br>
 
 <br>
 

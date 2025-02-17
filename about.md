@@ -3,11 +3,10 @@ layout: page
 title: About Me
 featured_image: /assets/images/pages/about.jpg
 ---
+  
+Hello there, I'm Simon, an industrial engineer who loves to bring people closer to new technical advances - especially when it involves interdisciplinary exchange. My work usually takes place at the intersection of software development, data analysis and business process management. So anything that falls into the area of **software architecture** and **business analysis** is right up my alley. 
 
-
-Hello there, I am Simon, an industrial engineer who loves to enable technical development by bringing together different areas of expertise. My work mostly takes place at the intersection of software development, data analysis and business process management. So anything that falls into the realm of **software architecture** and **business analysis** is right up my alley. 
-
-In my current profession as an IT quality manager, I specialize in software architecture and data modeling to support the development of flexible and durable monitoring solutions. Before that, I did my Master's degree at the Karlsruhe Institute of Technology (KIT). Besides my studies I worked in IT for smaller and larger companies, doing projects in the areas of web development and data science.  
+In my current position as Solution Architect, I provide guidance on software integration and customization for corporate real estate at DHL Global Business Services. Previously, I gained insights into large, networked system landscapes through monitoring tasks in the IT infrastructure department at DHL Germany. I completed my Master's degree in Industrial Engineering and Management at the Karlsruhe Institute of Technology (KIT). During my studies, I was able to gain a lot of practical experience in IT. To this day, I benefit from carrying out data science and web development projects for a wide range of companies - from a corporation to an independent contractor and two start-ups. 
 
 Focusing on the business and processing logic inside IT systems is an essential but constantly challenging task. Requirements change quickly, so the technical shell around the core logic must also be adapted frequently. However, it is not easy to find suitable software products and services in the abundance of options. As an IT enthusiast, I passionately follow and examine current trends in Tech. In this blog, I want to share some insights that can help to develop an understanding of current tools and frameworks. 
 
