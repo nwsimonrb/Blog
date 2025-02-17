@@ -17,8 +17,8 @@ The cloud hosts a multitude of services that give us access to digital memory an
 
 Three pairs of content are currently online:
 1. [Event streaming in context](https://simon.richebaecher.org/event-streaming-context) and [How to build your first event streaming dashboard](https://simon.richebaecher.org/streaming-dashboard-tutorial)
-2. [The DNA of an adaptive IT strategy - a carbon accounting use case](http://simon.richebaecher.org/connectors-schemas-context-1) and [How to process diverse data for real-time carbon accounting](http://simon.richebaecher.org/integration-processing-tutorial)
-3. [A new approach to task automation: LLM multi-agent systems](http://simon.richebaecher.org/connectors-schemas-context-1) and [How to build a custom GenAI research and prognosis engine](http://simon.richebaecher.org/scalable-agents-tutorial) 
+2. [The DNA of an adaptive IT strategy - a carbon accounting use case](http://simon.richebaecher.org/connectors-schemas-context-1) and [How to process diverse data for real-time carbon accounting](https://simon.richebaecher.org/integration-processing-tutorial)
+3. [A new approach to task automation: LLM multi-agent systems](https://simon.richebaecher.org/serverless-orchestration-context) and [How to build a custom GenAI research and prognosis engine](https://simon.richebaecher.org/scalable-agents-tutorial) 
 
 Each post is connected to the previous ones, so that discussions and use cases complement each other. Step by step we get to know the landscape of characteristic cloud services and test them. A roadmap for the corresponding use cases can be found below. My goal is to paint a holistic picture of the status quo and show what paths we can take from here. I would really appreciate your feedback on the content. So feel free to start a conversation by contacting me [here](https://simon.richebaecher.org/contact) or over [LinkedIn](https://www.linkedin.com/in/{{ site.linkedin }}). 
 
