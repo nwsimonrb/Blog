@@ -230,7 +230,7 @@ Use the ```function_app.py``` template in the repository and adjust it to your l
 
 Since we have previously defined all relevant Crewai components in crew.py, we only need to import them and assemble the crews for each workflow sequence. Now we have three different functions for all three sub-processes. They are only executed at the required times and retire afterwards, which makes the use of computing resources very efficient. However, before we move on to the actual cloud deployment, we can test whether everything is working by executing the ```func start``` command. The initial setup can take 3-5 minutes. After that each execution is much faster. Use this responsive, local testing method before deployment to avoid more time-consuming troubleshooting in the Azure cloud environment.  
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KUzP9WDyKAY?si=eUX96-SPmrzHIDkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NSfTC8Z5fHE?si=MbloUD_YxIA5yP8e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <br>
 
