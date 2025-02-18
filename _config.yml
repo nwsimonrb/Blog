@@ -14,7 +14,7 @@ disqus: #'justgoodthemes'
 # mailchimp_url: 'https://richebaecher.us21.list-manage.com/subscribe/post?u=2eba95e41bce6b37115e5f9b4&amp;id=76c3434085&amp;f_id=0006f8e1f0'
 # mailchimp_url: #'//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
 # Add your GA Tracking Id
-ga_analytics: 
+ga_analytics: G-ZPY23EZN0Z 
 
 # Contact form setings
 email: simon@richebaecher.org
